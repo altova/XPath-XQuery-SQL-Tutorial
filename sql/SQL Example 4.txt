@@ -1,0 +1,3 @@
+SELECT [Model]
+FROM [Cars]
+ORDER BY [Model]

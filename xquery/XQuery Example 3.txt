@@ -1,0 +1,5 @@
+distinct-values(
+    for $i in /CarsDB/Car
+    let $x := $i/Model
+    return $x
+)

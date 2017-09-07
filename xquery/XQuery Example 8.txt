@@ -1,0 +1,15 @@
+for	
+	(: Change these paths to the location of the two XML files in question :)
+	$i in doc('C:\Cars.xml')/CarsDB/Car,
+	$c in doc('C:\Cars_Manufacturer_Countries.xml')/CCDB/CarCountry
+let 
+	$year := 2007
+where 
+	$i/Manufacturer = ('BMW', 'Porsche')
+	and $i/Manufacturer = $c/Manufacturer
+	and $i/YearFrom <= $year
+	and $i/YearTill >= $year
+order by
+	$i/Model
+return
+	$i/Manufacturer || ' ' || $i/Model || ' from ' || $c/Country

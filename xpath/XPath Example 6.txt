@@ -1,0 +1,5 @@
+sort(/CarsDB/Car[
+	Manufacturer = 'BMW'
+    and YearFrom <= 2007
+	and YearTill >= 2007
+]/Model)

@@ -1,0 +1,6 @@
+SELECT [Model]
+FROM [Cars]
+WHERE [Manufacturer] = 'BMW'
+    AND [YearFrom] <= 2007
+    AND [YearTill] >= 2007
+ORDER BY [Model]

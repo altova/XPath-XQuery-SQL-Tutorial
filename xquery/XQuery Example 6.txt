@@ -1,0 +1,10 @@
+for $i in /CarsDB/Car
+let 
+	$x := $i/Model,
+    $year := 2007
+where 
+	$i/Manufacturer = 'BMW'
+    and $i/YearFrom <= $year
+    and $i/YearTill >= $year 
+order by $x
+return $x

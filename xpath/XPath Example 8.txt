@@ -1,0 +1,14 @@
+let
+	(: Change these paths to the location of the two XML files in question :)
+	$cars := doc('C:\Cars.xml')/CarsDB/Car,
+	$countries := doc('C:\Cars_Manufacturer_Countries.xml')/CCDB/CarCountry,
+	$year := 2007
+return 
+	$cars[
+		Manufacturer = ('BMW', 'Porsche') and YearFrom <= $year and YearTill >= $year
+	]/(
+		let 
+			$m := Manufacturer
+		return 
+			Manufacturer || ' ' || Model || ' from ' || $countries[Manufacturer = $m]/Country
+	)
