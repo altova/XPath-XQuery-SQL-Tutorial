@@ -1,0 +1,4 @@
+SELECT [Model]
+FROM [Cars]
+WHERE [Manufacturer] = 'BMW'
+ORDER BY [Model]

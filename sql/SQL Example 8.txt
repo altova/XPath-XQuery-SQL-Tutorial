@@ -1,0 +1,17 @@
+SELECT	
+    car.[Manufacturer] 
+    + ' ' 
+    + car.[Model] 
+    + ' from ' 
+    + cmc.Country AS all_models
+FROM 
+    [Cars] car
+LEFT JOIN
+    [Cars_Manufacturer_Countries] cmc
+        ON car.[Manufacturer] = cmc.[Manufacturer]
+WHERE
+    car.[Manufacturer] IN ('BMW', 'Porsche')
+    AND car.[YearFrom] <= 2007
+	AND car.[YearTill] >= 2007
+ORDER BY 
+    car.[Model]
